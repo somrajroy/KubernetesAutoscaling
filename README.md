@@ -19,10 +19,14 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
       * [Demo and details are available here](https://github.com/somrajroy/Kubernetes-HPA-minikube)<br/>
       * Limitations & best practices of HPA <br/>
         * HPA is not compatible with unscalable workloads,  such as DaemonSets (who does not have replicas) <br/>
+        * Cannot (should not) be used with VPA : An exception to this is when clients use a HPA that relies on custom and external metrics to scale the Pods.<br/>
         * Application may needs to be architected with scale out in mind so that distributing workloads across multiple servers is possible. <br/>
         * HPA makes scaling decisions based on resource request values at the container level. Therefore, it is essential to have configured the resource request values for all of your containers. Efficiently set CPU and memory limits on pods, else pods may terminate frequently or, on the other end of the spectrum, there will be resource wastage. <br/>
         * Due to its inherent limitations, HPA works best when combined with Cluster Autoscaler.  <br/>
         * Prefer custom metrics over external metrics when possible—the external metrics API represents a security risk because it can provide access to a large number of metrics. A custom metrics API presents less risk if compromised, because it only holds specific metrics.<br/>
         * Use HPA together with Cluster Autoscaler — this allows to coordinate scalability of pods with the behavior of nodes in the cluster. <br/>
    3. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
-   4. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
+        * The cluster autoscaler watches for pods that can't be scheduled on nodes because of resource constraints. The cluster then automatically increases the number of nodes.<br/>
+        * The cluster autoscaler decreases the number of nodes when there has been unused capacity for a period of time. Pods on a node to be removed by the cluster autoscaler are safely scheduled elsewhere in the cluster.<br/>
+        * [The cluster autoscaler may be unable to scale down if pods can't move, in these situations](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node)<br/>
+   5. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
