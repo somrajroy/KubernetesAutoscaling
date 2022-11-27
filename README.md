@@ -33,3 +33,9 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * It is best practice to use CA and HPA together. <br/>
         * [Demo and details are available here](https://github.com/somrajroy/AWS-EKS-Cluster-Autoscaling)<br/>
    5. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
+        * This is a new technology. Kubernetes Vertical Pod Autoscaler (VPA) is an autoscaler that enables automatic CPU and memory request and limit adjustments based on historical resource usage measurements. <br/>
+        * Updating running pods is still experimental in VPA, and performance in large clusters remains untested. VPA reacts to most out-of-memory events, but not all, and the behavior of multiple VPA resources that match the same pod remains undefined. <br/>
+        * VPA recreates pods when updating pod resources, possibly on a different node. As a result, all running containers restart.<br/>
+        * Avoid using HPA and VPA in tandem — HPA and VPA are incompatible. Do not use both together for the same set of pods, unless HPA is configured to use either custom or external metrics.<br/>
+        * It is advisable to use VPA with CA.<br/>
+        * [VPA is still in preview with Azure as of December-2022](https://learn.microsoft.com/en-us/azure/aks/vertical-pod-autoscaler)<br/>
