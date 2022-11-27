@@ -29,4 +29,7 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * The cluster autoscaler watches for pods that can't be scheduled on nodes because of resource constraints. The cluster then automatically increases the number of nodes.<br/>
         * The cluster autoscaler decreases the number of nodes when there has been unused capacity for a period of time. Pods on a node to be removed by the cluster autoscaler are safely scheduled elsewhere in the cluster.<br/>
         * [The cluster autoscaler may be unable to scale down if pods can't move, in these situations](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node)<br/>
+        * Cluster autoscaler does not support local PersistentVolumes. <br/>
+        * It is best practice to use CA and HPA together. <br/>
+        * [Demo and details are available here]([https://github.com/somrajroy/Kubernetes-HPA-minikube](https://github.com/somrajroy/AWS-EKS-Cluster-Autoscaling))<br/>
    5. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
