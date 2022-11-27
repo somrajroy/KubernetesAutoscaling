@@ -43,4 +43,7 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * A VPA deployment has three main components: VPA Recommender, VPA Updater, and VPA Admission Controller. <br/>
         * VPA requires at least two healthy pod replicas to work. This kind of defeats its purpose in the first place and is the reason why it isn’t usedextensively. As a VPA destroys a pod and recreates it to vertically autoscale it, itrequires at least two healthy pod replicas to ensure there’s no service outage. This creates unnecessary design complications on single instance stateful applications. For stateless applications, it can be better off using a Horizontal Pod Autoscalar instead of VPA.<br/>
         * [VPA is still in preview with Azure as of December-2022](https://learn.microsoft.com/en-us/azure/aks/vertical-pod-autoscaler)<br/>
-        ![image](https://user-images.githubusercontent.com/92582005/204138533-83b7007c-30e1-4dd2-b1d3-e35458a49689.png) <br/>
+        ![image](https://user-images.githubusercontent.com/92582005/204138533-83b7007c-30e1-4dd2-b1d3-e35458a49689.png) <br/><br/>
+        
+   #### Further references <br/>
+     * [8 best practices to reduce your AWS bill for Kubernetes](https://cast.ai/blog/8-best-practices-to-reduce-your-aws-bill-for-kubernetes/)<br/>
