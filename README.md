@@ -10,5 +10,6 @@ Guide to Kubernetes autoscaling for cloud cost optimization. Autoscaling in Kube
 * So there are three different methods supported by Kubernetes Autoscaling. HPA, VPA & CA. <br/>
 
   #### 1. [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) <br/>
+          HPA can be useful both for stateless applications and stateful workloads. <br/>
   #### 2. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
   #### 3. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
