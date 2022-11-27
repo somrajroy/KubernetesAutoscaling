@@ -22,9 +22,8 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * Cannot (should not) be used with VPA : An exception to this is when clients use a HPA that relies on custom and external metrics to scale the Pods.<br/>
         * Application may needs to be architected with scale out in mind so that distributing workloads across multiple servers is possible. <br/>
         * HPA makes scaling decisions based on resource request values at the container level. Therefore, it is essential to have configured the resource request values for all of your containers. Efficiently set CPU and memory limits on pods, else pods may terminate frequently or, on the other end of the spectrum, there will be resource wastage. <br/>
-        * Due to its inherent limitations, HPA works best when combined with Cluster Autoscaler.  <br/>
+        * Due to its inherent limitations, HPA works best when combined with Cluster Autoscaler - this allows to coordinate scalability of pods with the behavior of nodes in the cluster. <br/>
         * Prefer custom metrics over external metrics when possible—the external metrics API represents a security risk because it can provide access to a large number of metrics. A custom metrics API presents less risk if compromised, because it only holds specific metrics.<br/>
-        * Use HPA together with Cluster Autoscaler — this allows to coordinate scalability of pods with the behavior of nodes in the cluster. <br/>
         * HPA Architecture <br/>
         ![image](https://user-images.githubusercontent.com/92582005/204138589-9f9ceefd-90ae-41db-8eb3-a1c9d847ff02.png) <br/>
    3. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
