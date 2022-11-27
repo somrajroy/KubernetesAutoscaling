@@ -9,7 +9,11 @@ Guide to Kubernetes autoscaling for cloud cost optimization. Autoscaling in Kube
   * Node-based scaling—supported by the Cluster Autoscaler (CA). <br/>
 * So there are three different methods supported by Kubernetes Autoscaling. HPA, VPA & CA. <br/>
 
-  #### 1. [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) <br/>
-          HPA can be useful both for stateless applications and stateful workloads. <br/>
-  #### 2. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
-  #### 3. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
+   1. [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) : <br/>
+      * Horizontal scaling refers to the deployment of extra pods in the Kubernetes Cluster in response to a growing load. HPA can be useful both for stateless applications and stateful workloads. Allows customers to dynamically (i.e., automatically) increase or decrease the number of running pods based on application’s usage changes.<br/>
+      * HPA also decreases the number of pods when application usage comes down. The HPA takes the mean of a per-pod metric value for calculations. It calculates whether removing or adding replicas would bring the current value closer to the target value. <br/>
+      * It is to be noted that Horizontal Pod autoscaling is not compatible with unscalable workloads,  such as DaemonSets. Daemonsets work on a “one pod per node” basis, and therefore, they cannot have replicas, which is why HPA is not compatible with Daemonsets. <br/>
+      * Before setting up Kubernetes Autoscaling, Metric Server needs to be installed the Cluster. The Kubernetes Metrics Server is a resource consumption data aggregator which isn’t installed by default. The Kubernetes Metrics Server collects resource metrics from each worker node’s kubelet and presents them to the Kubernetes API server via the Kubernetes Metrics API. <br/>
+      * [Demo and details are available here](https://github.com/somrajroy/Kubernetes-HPA-minikube)<br/>
+   3. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
+   4. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
