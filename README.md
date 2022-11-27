@@ -1,2 +1,5 @@
-# KubernetesAutoscaling
-Autoscaling in Kubernetes demystified.
+### Kubernetes Autoscaling
+Autoscaling in Kubernetes demystified.<br/><br/>
+* Kubernetes is the de-facto standard for container orchestration. However Kubernetes is highly complex. It’s a difficult environment requiring a steep learning curve to seize its real potential. Kubernetes defines a complex infrastructure so that applications can be simple. Everything that an application typically has to take into consideration (security, logging, redundancy, scaling etc.) are all built into the Kubernetes fabric. <br/>
+* Kubernetes Autoscaling : This automation capability means client don't have to manually provision & scale down resources as demand changes. It prevents needless spending. However despite (or maybe in spite) of the sophisticated autoscaling technology, a Kubernetes cluster often accumulates financial waste and creates performance bottlenecks over time. This article will help developers/administrators to overcome those to a large extent. <br/>
+* As the prefix “auto” suggests, autoscaling in Kubernetes is one of the container orchestration platform’s major automation capabilities. It simplifies resource management that would otherwise require intensive human effort to achieve. It ensures optimal resource utilization and cloud spending. <br/>
