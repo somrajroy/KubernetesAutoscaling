@@ -25,6 +25,8 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * Due to its inherent limitations, HPA works best when combined with Cluster Autoscaler.  <br/>
         * Prefer custom metrics over external metrics when possible—the external metrics API represents a security risk because it can provide access to a large number of metrics. A custom metrics API presents less risk if compromised, because it only holds specific metrics.<br/>
         * Use HPA together with Cluster Autoscaler — this allows to coordinate scalability of pods with the behavior of nodes in the cluster. <br/>
+        * HPA Architecture <br/>
+        ![image](https://user-images.githubusercontent.com/92582005/204138589-9f9ceefd-90ae-41db-8eb3-a1c9d847ff02.png) <br/>
    3. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
         * The cluster autoscaler watches for pods that can't be scheduled on nodes because of resource constraints. The cluster then automatically increases the number of nodes.<br/>
         * The cluster autoscaler decreases the number of nodes when there has been unused capacity for a period of time. Pods on a node to be removed by the cluster autoscaler are safely scheduled elsewhere in the cluster.<br/>
