@@ -14,7 +14,13 @@ Guide to Kubernetes autoscaling for cloud cost optimization. Autoscaling in Kube
       * HPA also decreases the number of pods when application usage comes down. The HPA takes the mean of a per-pod metric value for calculations. It calculates whether removing or adding replicas would bring the current value closer to the target value. <br/>
       * It is to be noted that Horizontal Pod autoscaling is not compatible with unscalable workloads,  such as DaemonSets. Daemonsets work on a “one pod per node” basis, and therefore, they cannot have replicas, which is why HPA is not compatible with Daemonsets. <br/>
       * Before setting up Kubernetes Autoscaling, Metric Server needs to be installed the Cluster. The Kubernetes Metrics Server is a resource consumption data aggregator which isn’t installed by default. The Kubernetes Metrics Server collects resource metrics from each worker node’s kubelet and presents them to the Kubernetes API server via the Kubernetes Metrics API. <br/>
+      * The Kubernetes Metrics Server collects resource metrics from each worker node’s kubelet and presents them to the Kubernetes API server via the Kubernetes Metrics API.<br/>
       * HPA works best when combined with Cluster Autoscaler. When the existing nodes on the cluster are exhausted, HPA cannot scale resources up, so it needs Cluster Autoscaler to help add nodes in the Kubernetes cluster.<br/>
       * [Demo and details are available here](https://github.com/somrajroy/Kubernetes-HPA-minikube)<br/>
+      * Limitations of HPA <br/>
+        * HPA is not compatible with unscalable workloads,  such as DaemonSets (who does not have replicas) <br/>
+        * Application may needs to be architected with scale out in mind so that distributing workloads across multiple servers is possible. <br/>
+        * HPA makes scaling decisions based on resource request values at the container level. Therefore, it is essential to have configured the resource request values for all of your containers. Efficiently set CPU and memory limits on pods, else pods may terminate frequently or, on the other end of the spectrum, there will be resource wastage. <br/>
+        * Due to its inherent limitations, HPA works best when combined with Cluster Autoscaler.  <br/>
    3. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
    4. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
