@@ -36,7 +36,8 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * This is a new technology. Kubernetes Vertical Pod Autoscaler (VPA) is an autoscaler that enables automatic CPU and memory request and limit adjustments based on historical resource usage measurements. <br/>
         * Updating running pods is still experimental in VPA, and performance in large clusters remains untested. VPA reacts to most out-of-memory events, but not all, and the behavior of multiple VPA resources that match the same pod remains undefined. <br/>
         * VPA recreates pods when updating pod resources, possibly on a different node. As a result, all running containers restart.<br/>
-        * Avoid using HPA and VPA in tandem — HPA and VPA are incompatible. Do not use both together for the same set of pods, unless HPA is configured to use either custom or external metrics.<br/>
+        * Avoid using HPA and VPA in tandem — HPA and VPA are incompatible. It is not advisable to use both HPA & VPA together for the same set of pods, unless HPA is configured to use either custom or external metrics.<br/>
         * It is advisable to use VPA with CA.<br/>
+        * A VPA deployment has three main components: VPA Recommender, VPA Updater, and VPA Admission Controller. <br/>
         * VPA requires at least two healthy pod replicas to work. This kind of defeats its purpose in the first place and is the reason why it isn’t usedextensively. As a VPA destroys a pod and recreates it to vertically autoscale it, itrequires at least two healthy pod replicas to ensure there’s no service outage. This creates unnecessary design complications on single instance stateful applications. For stateless applications, it can be better off using a Horizontal Pod Autoscalar instead of VPA.<br/>
         * [VPA is still in preview with Azure as of December-2022](https://learn.microsoft.com/en-us/azure/aks/vertical-pod-autoscaler)<br/>
