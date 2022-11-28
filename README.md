@@ -45,5 +45,7 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         ![image](https://user-images.githubusercontent.com/92582005/204138533-83b7007c-30e1-4dd2-b1d3-e35458a49689.png) <br/><br/>
         
    #### Further references <br/>
+     * [What does AWS mean by Cost Optimization?](https://www.linkedin.com/comm/pulse/what-does-aws-mean-cost-optimization-neal-davis)<br/>
+     * [How to save money on Amazon Web Services](https://www.linkedin.com/pulse/how-save-money-amazon-web-services-neal-davis)<br/>
      * [8 best practices to reduce AWS bill for Kubernetes](https://cast.ai/blog/8-best-practices-to-reduce-your-aws-bill-for-kubernetes/)<br/>
      * [Cluster autoscaling with AKS](https://learn.microsoft.com/en-us/training/modules/aks-cluster-autoscaling/)<br/>
