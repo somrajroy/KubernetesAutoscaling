@@ -62,3 +62,5 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
      * [Azure cost optimization: 8 ways to save when using Azure](https://www.nigelfrank.com/insights/8-ways-to-save-when-using-azure)<br/>
      * [6 Azure cost optimization best practices](https://www.techtarget.com/searchcloudcomputing/tip/Implement-these-Azure-cost-optimization-best-practices)<br/>
      * [Azure Cost Optimization: 12 Ways to Save on Azure](https://bluexp.netapp.com/blog/azure-cost-optimization-12-ways-to-save-on-azure-cvo-blg)<br/>
+     * [Azure Data Transfer Costs: Everything You Need To Know](https://cloudmonitor.ai/2021/08/azure-data-transfer-costs-everything-you-need-to-know/)<br/>
+     * [Overview of Data Transfer Costs for Common Architectures](https://aws.amazon.com/blogs/architecture/overview-of-data-transfer-costs-for-common-architectures/)<br/>
