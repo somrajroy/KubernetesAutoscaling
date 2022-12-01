@@ -1,6 +1,7 @@
 ### Kubernetes Autoscaling
 Scalability is one of the core benefits & value propositions of Kubernetes (K8s). In order to get the most out of this benefit (and use K8s effectively), a solid understanding of how Kubernetes autoscaling works is required.  <br/>
 * Kubernetes is the de-facto standard for container orchestration. However Kubernetes is highly complex. It’s a difficult environment requiring a steep learning curve to seize its real potential. Kubernetes defines a complex infrastructure so that applications can be simple. Everything that an application typically has to take into consideration (security, logging, redundancy, scaling etc.) are all built into the Kubernetes fabric. <br/>
+* **Shifting workloads to Containers is one of the most important cloud cost optimization techniques & reduces hosting costs.** Containers optimize costs by combining different tasks in fewer servers. Other benefits include a lower digital footprint, faster operability, built-in monitoring, etc.Hence it is essential to understand the cost saving and efficiency features of Kubernetes<br/>
 * Kubernetes Autoscaling : This automation capability means client don't have to manually provision & scale down resources as demand changes. It prevents needless spending. However despite (or maybe in spite) of the sophisticated autoscaling technology, a Kubernetes cluster often accumulates financial waste and creates performance bottlenecks over time. This article will help developers/administrators to overcome those to a large extent. <br/>
 * [Cost optimization](https://www.gartner.com/en/information-technology/glossary/cost-optimization) is a business-focused, continuous discipline to drive spending and cost reduction, while maximizing business value. It includes:<br/>
   * Obtaining the best pricing and terms for all business purchases <br/>
@@ -59,3 +60,5 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
      * [AWS Cost Optimization](https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.pillar.costOptimization.en.html)<br/>
      * [Azure Cost Optimization Techniques](https://www.linkedin.com/pulse/azure-cost-optimization-techniques-dr-rabi-prasad-padhy?trk=pulse-article_more-articles_related-content-card)<br/>
      * [Azure cost optimization: 8 ways to save when using Azure](https://www.nigelfrank.com/insights/8-ways-to-save-when-using-azure)<br/>
+     * [6 Azure cost optimization best practices](https://www.techtarget.com/searchcloudcomputing/tip/Implement-these-Azure-cost-optimization-best-practices)<br/>
+     * [Azure Cost Optimization: 12 Ways to Save on Azure](https://bluexp.netapp.com/blog/azure-cost-optimization-12-ways-to-save-on-azure-cvo-blg)<br/>
