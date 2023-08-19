@@ -48,6 +48,20 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * Cluster autoscaler does not support local PersistentVolumes. <br/>
         * It is best practice to use CA and HPA together. <br/>
         * [Demo and details are available here](https://github.com/somrajroy/AWS-EKS-Cluster-Autoscaling)<br/>
+        * Limitations of CA : Below are some limitations of CA which architects needs to keep in mind. <br/>
+           * Request-based scaling : CA does not make scaling decisions using CPU or memory usage.  CA scales a cluster 
+             based on the resource requests of the pods running on it, rather than their actual usage. This limitation means 
+             that the unused computing resources requested by users will not be detected by CA, resulting in a cluster with 
+             waste and low utilization efficiency. Hence right sizing pods is important & HPA is recoommeded along with CA. 
+             Scaling kubernetes clusters requires fine-tuning the setting of the autoscalers so that they work in concert. 
+             This combination of CA & HPA makes it very simple to automate scaling for container workloads and the 
+             Kubernetes environment. CA & HPA should be used in concert together for maximum benefit.<br/>
+           * Scaling can take time : Whenever there is a request to scale up the cluster, CA issues a scale-up request to a 
+             cloud provider within 30–60 seconds. The actual time the cloud provider takes to create a node can be several 
+             minutes or more. This delay means that the application performance may be degraded while waiting for the 
+             extended cluster capacity.  <br/>
+           *  Lack of on-premise support: Cluster Autoscaler is designed to work with cloud-based Kubernetes clusters, and 
+              there is limited support for on-premise deployments. This may limit its use in certain scenarios.<br/>
    5. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
         * This is a new technology. Kubernetes Vertical Pod Autoscaler (VPA) is an autoscaler that enables automatic CPU and memory request and limit adjustments based on historical resource usage measurements. <br/>
         * Updating running pods is still experimental in VPA, and performance in large clusters remains untested. VPA reacts to most out-of-memory events, but not all, and the behavior of multiple VPA resources that match the same pod remains undefined. <br/>
