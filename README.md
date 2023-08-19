@@ -28,7 +28,21 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
         * HPA Architecture <br/>
         ![image](https://user-images.githubusercontent.com/92582005/204138589-9f9ceefd-90ae-41db-8eb3-a1c9d847ff02.png) <br/>
    3. [Cluster Autoscaler (CA)](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler#cluster-autoscaler) <br/>
-        * The cluster autoscaler watches for pods that can't be scheduled on nodes because of resource constraints. The cluster then automatically increases the number of nodes.<br/>
+        * Clusters are how Kubernetes groups machines. They are comprised of Nodes which run Pods. Pods have containers that 
+          request resources. The CA adds or removes Nodes in a Cluster based on resource requests from Pods.<br/>
+        * Node starvation :  When a node doesn't meet the needed requirements for the pod's resource, the pod remains on 
+          status Pending, and it's not scheduled to any nodes until there are enough resources available. <br/>
+        * Cluster scalability : Scaling the cluster is remedy to the above problem. The CA increases the size of the cluster 
+          when there are pods that are not able to be scheduled due to resource shortages. This process can be a little 
+          overwhelming, especially for a cluster with variable demand. When the number of pods fluctuates a lot, it requires 
+          the operator to constantly monitor for unscheduled pods and make changes in real time. Cluster Autoscaler(CA) is a 
+          Kubernetes feature that automatically adjusts the number of worker nodes in a cluster based on workload demands. 
+          <br/>
+        * The cluster autoscaler(CA) watches for pods that can't be scheduled on nodes because of resource constraints. The 
+          cluster then automatically increases the number of nodes. CA automates the process of scaling the cluster 
+          manually. It's installed within the cluster and watches for unscheduled pods with resource constraints, then it 
+          automatically increases the number of nodes in a cluster to meet these requirements. The CA decreases the number 
+          of nodes in a cluster, if there's unused cluster capacity for a specified amount of time. <br/>
         * The cluster autoscaler decreases the number of nodes when there has been unused capacity for a period of time. Pods on a node to be removed by the cluster autoscaler are safely scheduled elsewhere in the cluster.<br/>
         * [The cluster autoscaler may be unable to scale down if pods can't move, in these situations](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node)<br/>
         * Cluster autoscaler does not support local PersistentVolumes. <br/>
