@@ -62,6 +62,8 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
              extended cluster capacity.  <br/>
            *  Lack of on-premise support: Cluster Autoscaler is designed to work with cloud-based Kubernetes clusters, and 
               there is limited support for on-premise deployments. This may limit its use in certain scenarios.<br/>
+           * Some administrator action still required. For example ,Auto Scaling Groups need to be managed independently by 
+             the user. Each CSP has some limitations which can be found in their official documentation. <br/>
    5. [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)<br/>
         * This is a new technology. Kubernetes Vertical Pod Autoscaler (VPA) is an autoscaler that enables automatic CPU and memory request and limit adjustments based on historical resource usage measurements. <br/>
         * Updating running pods is still experimental in VPA, and performance in large clusters remains untested. VPA reacts to most out-of-memory events, but not all, and the behavior of multiple VPA resources that match the same pod remains undefined. <br/>
