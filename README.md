@@ -8,7 +8,7 @@ Scalability is one of the core benefits & value propositions of Kubernetes (K8s)
 * The Kubernetes autoscaling mechanism uses two layers : 
   * Pod-based scaling—supported by the Horizontal Pod Autoscaler (HPA) and the newer Vertical Pod Autoscaler (VPA).<br/>
   * Node-based scaling—supported by the Cluster Autoscaler (CA). <br/>
-* [Please check this link for a hands-on demo of CA & HPA](https://gitlab.com/k8-tech-talk-series-group/K8SAutoscaling) with additional details which you can apply in your projects. <br/>
+
 * So there are three different methods supported by Kubernetes Autoscaling. HPA, VPA & CA. <br/>
 
    1. [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) : <br/>
